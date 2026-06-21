@@ -1,0 +1,4 @@
+{
+  "/page": "app/page.js",
+  "/api/predict/[ticker]/route": "app/api/predict/[ticker]/route.js"
+}

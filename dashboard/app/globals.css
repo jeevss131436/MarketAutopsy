@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+}
+
+/* Thin neon scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: rgba(0, 255, 136, 0.25); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 255, 136, 0.5); }
+
+/* Grid dot background pattern */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Neon glow on text */
+.neon-text {
+  text-shadow:
+    0 0 8px rgba(0, 255, 136, 0.9),
+    0 0 20px rgba(0, 255, 136, 0.5),
+    0 0 40px rgba(0, 255, 136, 0.2);
+}
+
+/* Glitch animation for the regressor return value */
+@keyframes glitchText {
+  0%, 82%, 100% {
+    transform: translate(0) skewX(0deg);
+    opacity: 1;
+  }
+  83% {
+    transform: translate(-3px, 1px) skewX(-8deg);
+    opacity: 0.85;
+  }
+  84% {
+    transform: translate(3px, -1px) skewX(6deg);
+    opacity: 0.9;
+  }
+  85% {
+    transform: translate(-1px, 0) skewX(-2deg);
+    opacity: 1;
+  }
+  86% {
+    transform: translate(0) skewX(0deg);
+  }
+}
+
+.glitch-anim {
+  animation: glitchText 6s infinite;
+  will-change: transform;
+}
+
+/* Neon input focus ring */
+.neon-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+/* Card glassmorphism base */
+.cyber-card {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* BUY badge pulse ring */
+@keyframes ringPulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 255, 136, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0); }
+}
+
+.ring-pulse {
+  animation: ringPulse 2.5s ease-out infinite;
+}
